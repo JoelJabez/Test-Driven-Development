@@ -9,15 +9,8 @@ package org.example;
  * @author joel
  * @since 10.2.0
  */
-public class Franc extends Money
-{
-    Franc(int amount, String currency)
-    {
+public class Franc extends Money {
+    Franc(int amount, String currency) {
         super(amount, currency);
-    }
-
-    Money times(int multiplier)
-    {
-        return Money.dollar(amount * multiplier);
     }
 }
