@@ -1,7 +1,6 @@
 package org.example;
 
-public abstract class Money
-{
+public class Money {
     protected int amount;
     protected String currency;
 
@@ -10,19 +9,23 @@ public abstract class Money
         this.currency = currency;
     }
 
-    @Override
-    public boolean equals(Object object)
-    {
-        Money dollar = (Money) object;
-        return amount == dollar.amount;
+    static Money dollar(int amount) {
+        return new Money(amount, "USD");
     }
 
     static Money franc(int amount) {
-        return new Franc(amount, "CHF");
+        return new Money(amount, "CHF");
     }
 
-    static Money dollar(int amount) {
-        return new Dollar(amount, "USD");
+    Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        Money money = (Money) object;
+        return amount == money.amount
+                && currency.equals(money.currency);
     }
 
     String currency() {
