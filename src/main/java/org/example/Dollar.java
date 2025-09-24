@@ -11,13 +11,13 @@ package org.example;
  */
 public class Dollar extends Money
 {
-    public Dollar(int amount)
+    Dollar(int amount, String currency)
     {
-        this.amount = amount;
+        super(amount, currency);
     }
 
-    Dollar times(int rate)
+    Money times(int multiplier)
     {
-        return new Dollar(amount * rate);
+        return Money.dollar(amount * multiplier);
     }
 }

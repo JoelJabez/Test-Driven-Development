@@ -11,13 +11,13 @@ package org.example;
  */
 public class Franc extends Money
 {
-    public Franc(int amount)
+    Franc(int amount, String currency)
     {
-        this.amount = amount;
+        super(amount, currency);
     }
 
-    Franc times(int rate)
+    Money times(int multiplier)
     {
-        return new Franc(amount * rate);
+        return Money.dollar(amount * multiplier);
     }
 }
