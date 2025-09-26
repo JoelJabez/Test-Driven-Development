@@ -28,4 +28,18 @@ class MoneySpec extends Specification
         expect:
         Money.dollar(10) == sum
     }
+
+    def "Plus return sum"()
+    {
+        Given:
+        Money five= Money.dollar(5);
+        Expression sum = five.plus(five);
+        Bank bank= new Bank();
+
+        when:
+        Money reduced= bank.reduce(sum, "USD");
+
+        then:
+        Money.dollar(10) ==  reduced;
+    }
 }

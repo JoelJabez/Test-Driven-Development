@@ -21,9 +21,9 @@ public class Money {
         return new Money(amount * multiplier, currency);
     }
 
-    Money plus(Money added)
+    Money plus(Money addend)
     {
-        return new Money(amount + added.amount, currency);
+        return new Money(amount + addend.amount, currency);
     }
 
     @Override
