@@ -29,17 +29,17 @@ class MoneySpec extends Specification
         Money.dollar(10) == sum
     }
 
-    def "Plus with reduce"()
+    def "Plus return sum"()
     {
-        given:
-        Money five= Money.dollar(5)
-        Expression sum= five.plus(five)
-        Bank bank= new Bank()
+        Given:
+        Money five= Money.dollar(5);
+        Expression sum = five.plus(five);
+        Bank bank= new Bank();
 
         when:
-        Money reduced= bank.reduce(sum, "USD")
+        Money reduced= bank.reduce(sum, "USD");
 
         then:
-        Money.dollar(10) == reduced
+        Money.dollar(10) ==  reduced;
     }
 }
