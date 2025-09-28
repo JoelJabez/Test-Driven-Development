@@ -29,11 +29,11 @@ class MoneySpec extends Specification
         Money.dollar(10) == sum
     }
 
-    def "Plus return sum"()
+    def "Plus"()
     {
-        Given:
-        Money five= Money.dollar(5);
-        Expression sum = five.plus(five);
+        given:
+        Money five= Money.dollar(5)
+        Expression sum = five.plus(five)
         Bank bank= new Bank();
 
         when:
